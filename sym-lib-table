@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "RP2040 Stamp")(type "KiCad")(uri "${KIPRJMOD}/RP2040_Stamp.kicad_sym")(options "")(descr "RP2040 Footprints"))
+  (lib (name "Doom Pico")(type "KiCad")(uri "${KIPRJMOD}/Doom Pico.kicad_sym")(options "")(descr ""))
+)

@@ -1,0 +1,116 @@
+
+(rules PCB Tristan_Doom_Pico
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 419)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.0)
+    (clear 125.0 (type smd_to_turn_gap))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-USB Data" "Via[0-1]_800:400_um" "USB Data"
+  )
+  (via 
+    "Via[0-1]_800:400_um-VGA 75Imp" "Via[0-1]_800:400_um" "VGA 75Imp"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    "USB Data" "Via[0-1]_800:400_um-USB Data"
+  )
+  (via_rule
+    "VGA 75Imp" "Via[0-1]_800:400_um-VGA 75Imp"
+  )
+  (class default
+    GND +5V +3.3VA +3V3 "Net-(C8-Pad1)" "Net-(C9-Pad1)" "Net-(C9-Pad2)" "Net-(C10-Pad1)"
+    "/PCM_AUDIO_L" "/PCM_AUDIO_R" "/I2C1_SDA" "/I2C1_SCL" "Net-(F1-Pad1)" "Net-(J1-PadA5)" "Net-(D2-Pad2)" "unconnected-(J1-PadA8)"
+    "Net-(J1-PadB5)" "unconnected-(D6-Pad1)" "unconnected-(J1-PadB8)" "/UART1_RX" "/UART1_TX" /SWDIO /SWCLK "unconnected-(J7-Pad4)"
+    "unconnected-(J7-Pad9)" "unconnected-(J7-Pad11)" "unconnected-(J7-Pad12)" "unconnected-(J7-Pad15)" "Net-(R5-Pad1)" "Net-(R6-Pad1)" "/PCM_L" "/PCM_R"
+    "Net-(SW1-Pad2)" "unconnected-(U1-Pad6)" "unconnected-(U1-Pad23)" "unconnected-(U1-Pad24)" "unconnected-(U1-Pad25)" "unconnected-(U1-Pad26)" /DIN /BCK
+    /LRCK "unconnected-(U1-Pad30)" "unconnected-(U1-Pad32)" "unconnected-(U3-Pad4)" "unconnected-(U1-Pad39)" "Net-(J8-Pad2)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "USB Data"
+    "/USBC_D+" "/USB_D-" "/USB_D+" "/USBC_D-" "/KBUSB_D-" "/KBUSB_D+" /U+ "/U-"
+    (clearance_class "USB Data")
+    (via_rule "USB Data")
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "VGA 75Imp"
+    "/VGA_G" "/VGA_R" "/VGA_B" /HSYNC /VSYNC /RED4 /RED3 /RED2
+    /RED1 /RED0 /GRN4 /GRN3 /GRN2 /GRN1 /GRN0 /BLU4
+    /BLU3 /BLU2 /BLU1 /BLU0
+    (clearance_class "VGA 75Imp")
+    (via_rule "VGA 75Imp")
+    (rule
+      (width 1330.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

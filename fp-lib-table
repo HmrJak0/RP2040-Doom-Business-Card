@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "RP2040 Footprint")(type "KiCad")(uri "${KIPRJMOD}/RP2040_Stamp.pretty")(options "")(descr "RP2040 Footprint"))
+  (lib (name "Doom_Pico")(type "KiCad")(uri "${KIPRJMOD}/Doom_Pico.pretty")(options "")(descr ""))
+)
